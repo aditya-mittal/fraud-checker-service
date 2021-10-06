@@ -84,6 +84,12 @@ public class FraudCheckerController {
         return ResponseEntity.ok(String.format("{ \"PONG\" : \"%s is running fine!\" }", FraudCheckerController.class.getSimpleName()));
     }
 
+    @GetMapping(value = "success", produces = "application/json")
+    @ResponseBody
+    public ResponseEntity<String> success() {
+        return ResponseEntity.ok(String.format("{ \"Message\" : \"%s is deployed using CD pipeline. Mission accomplished!\" }", FraudCheckerController.class.getSimpleName()));
+    }
+
     @ApiOperation(value = "Validate Path Variable", produces = "text/plain")
     // The @ApiParam annotation is for the parameters of an API resource request,
     //  whereas @ApiModelProperty is for properties of the model.
